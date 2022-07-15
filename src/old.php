@@ -28,7 +28,7 @@ class action_plugin_yixuetianya extends DokuWiki_Action_Plugin {
 
           $event->data['script'][] = array(
               'type'    => 'text/javascript',
-              'src'     => DOKU_PLUGIN.'yixuetianya/src/auto-render.min.js',
+              'src'     => '/lib/plugins/yixuetianya/src/auto-render.min.js',
       'charset' => 'utf-8',
               'defer'   => ''
           );

@@ -35,13 +35,13 @@ class action_plugin_yixuetianya extends DokuWiki_Action_Plugin {
 		// 'href'  => $this->getConf('urlcss'),
         if($this->getConf('usekatex') == 1) {
             $event->data['link'][] = array(
-                'href'  => $this->getConf('urlcss'),
+                'href'  => '/lib/plugins/yixuetianya/src/katex.min.css',
                 'rel'   => 'stylesheet'
             );
 
             $event->data['script'][] = array(
                 'type'    => 'text/javascript',
-                'src'     => $this->getConf('urlkatex'),
+                'src'     => '/lib/plugins/yixuetianya/src/katex.min.js',
 				'charset' => 'utf-8',
                 'defer'   => ''
             );
@@ -49,17 +49,17 @@ class action_plugin_yixuetianya extends DokuWiki_Action_Plugin {
             $event->data['script'][] = array(
                 'type'    => 'text/javascript',
 				'charset' => 'utf-8',
-                'src'     => $this->getConf('urlautorender'),
+                'src'     => '/lib/plugins/yixuetianya/src/auto-render.min.js',
                 'defer'   => ''
             );
         }
 
 
 
-        $katex = $this->getConf('usekatex') == 1 ? '=1' : '=0';
+        $katex = $this->getConf('usekatex') == 1 ? '?华鹤=1&字体=5&水土=1&短名=0&katex=1' : '?华鹤=1&字体=5&水土=1&短名=0&katex=0';
         $event->data['script'][] = array(
             'type'    => 'text/javascript',
-            'src'     => $this->getConf('urlyixue').$katex,
+            'src'     => '/lib/plugins/yixuetianya/src/bundle.js'.$katex,
             'charset' => 'utf-8',
             'defer'   => ''
         );
