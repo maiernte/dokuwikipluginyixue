@@ -32,16 +32,15 @@ class action_plugin_yixuetianya extends DokuWiki_Action_Plugin {
     public function _tpl_metaheader(Doku_Event $event, $param) {
         // Create main config block
         
-		// 'href'  => $this->getConf('urlcss'),
         if($this->getConf('usekatex') == 1) {
             $event->data['link'][] = array(
-                'href'  => '/lib/plugins/yixuetianya/src/katex.min.css',
+                'href'  => $this->getConf('urlcss'),
                 'rel'   => 'stylesheet'
             );
 
             $event->data['script'][] = array(
                 'type'    => 'text/javascript',
-                'src'     => '/lib/plugins/yixuetianya/src/katex.min.js',
+                'src'     => $this->getConf('urlkatex'),
 				'charset' => 'utf-8',
                 'defer'   => ''
             );
@@ -49,17 +48,15 @@ class action_plugin_yixuetianya extends DokuWiki_Action_Plugin {
             $event->data['script'][] = array(
                 'type'    => 'text/javascript',
 				'charset' => 'utf-8',
-                'src'     => '/lib/plugins/yixuetianya/src/auto-render.min.js',
+                'src'     => $this->getConf('urlautorender'),
                 'defer'   => ''
             );
         }
 
-
-
-        $katex = $this->getConf('usekatex') == 1 ? '?华鹤=1&字体=5&水土=1&短名=0&katex=1' : '?华鹤=1&字体=5&水土=1&短名=0&katex=0';
+        $katex = $this->getConf('usekatex') == 1 ? '=1' : '=0';
         $event->data['script'][] = array(
             'type'    => 'text/javascript',
-            'src'     => '/lib/plugins/yixuetianya/src/bundle.js'.$katex,
+            'src'     => $this->getConf('urlyixue').$katex,
             'charset' => 'utf-8',
             'defer'   => ''
         );

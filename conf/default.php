@@ -5,9 +5,16 @@
  * @author Goldentianya <goldentianya@gmail.com>
  */
 
-$conf['urlkatex'] = 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js';
-$conf['urlautorender'] = 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js';
-$conf['urlcss'] = 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css';
-$conf['urlyixue'] = 'https://raw.githack.com/maiernte/img/master/libs/bundle.js?华鹤=1&字体=5&水土=1&短名=0&katex';
-$conf['usekatex'] = 1;
+ /**
+* $conf['urlkatex'] = 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js';
+* $conf['urlautorender'] = 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js';
+* $conf['urlcss'] = 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css';
+* $conf['urlyixue'] = 'https://raw.githack.com/maiernte/img/master/libs/bundle.js?华鹤=1&字体=5&水土=1&短名=0&katex';
+* $conf['usekatex'] = 1;
+*/
 
+$conf['urlkatex'] = '/lib/plugins/yixuetianya/src/katex.min.js';
+$conf['urlautorender'] = '/lib/plugins/yixuetianya/src/auto-render.min.js';
+$conf['urlcss'] = '/lib/plugins/yixuetianya/src/katex.min.css';
+$conf['urlyixue'] = '/lib/plugins/yixuetianya/src/bundle.js?华鹤=1&字体=5&水土=1&短名=0&katex';
+$conf['usekatex'] = 1;
